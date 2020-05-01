@@ -1,0 +1,2 @@
+rootProject.name='Java_Chat_App'
+include ':app'

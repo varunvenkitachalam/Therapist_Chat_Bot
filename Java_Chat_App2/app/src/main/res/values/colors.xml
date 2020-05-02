@@ -3,5 +3,10 @@
     <color name="colorPrimary">#AB44F5</color>
     <color name="colorPrimaryDark">#673AB7</color>
     <color name="colorPrimaryCenter">#9C27B0</color>
-    <color name="colorAccent">#ffff</color>
+    <color name="colorTextBox"> #1e90ff </color>
+    <color name="colorAccent"> #ffb6c1 </color>
+    <color name="colorHint"> #c3acac </color>
+    <color name="colorButton"> #FFFFFF </color>
+    <color name="colorText"> #FFFFFF </color>
+    <color name="colorTextWhite"> #000000 </color>
 </resources>

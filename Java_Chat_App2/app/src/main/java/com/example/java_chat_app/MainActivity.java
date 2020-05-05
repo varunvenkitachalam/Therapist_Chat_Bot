@@ -70,10 +70,10 @@ public class MainActivity extends AppCompatActivity {
     public void getResponse(String input){
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
-            String URL = "https://psychbot-cs4800.herokuapp.com/api/send_message";
+            String URL = "https://psychbot-cs4800.herokuapp.com/api/send_message/";
             JSONObject jsonBody = new JSONObject();
             jsonBody.put("message", input);
-             //String serverResponse;
+            jsonBody.put("session_id", "7");
             final String requestBody = jsonBody.toString();
 
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {

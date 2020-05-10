@@ -12,6 +12,7 @@ import java.util.List;
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.CustomViewHolder> {
 
+    // extends the recycle viewer that displays our message and sets the text
     class CustomViewHolder extends RecyclerView.ViewHolder{
         TextView textView;
         public CustomViewHolder( View itemView) {
@@ -25,6 +26,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.CustomVi
 
     }
 
+    //if the view is our message then returns our bubble, if not the put text in bot bubble
     @Override
     public int getItemViewType(int position) {
        if(messageResponseList.get(position).getCheckMe()) {

@@ -1,3 +1,4 @@
+
 package com.example.java_chat_app;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,11 +31,15 @@ import org.json.JSONException;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.ArrayList;
+/*
+Creators: Varun Venkitachalam, Salvatore Grillo, Minwoo Soh, Richard Cota
+CS4800: ChatBot Application
+ */
 public class MainActivity extends AppCompatActivity {
-    EditText userInput;
-    RecyclerView recyclerView;
-    List<MessageResponse> messageResponseList;
-    MessageAdapter messageAdapter;
+    EditText userInput;                     // will hold userinput text
+    RecyclerView recyclerView;              // the order the scroll viewer
+    List<MessageResponse> messageResponseList;  // the total list of messages
+    MessageAdapter messageAdapter;              // our message holder to check whose message should be sent
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,13 +65,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    public boolean isVisible(){
-        LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
-        int positionOfLastVisibleItem = linearLayoutManager.findLastCompletelyVisibleItemPosition();
-        int itemCount = recyclerView.getAdapter().getItemCount();
-        return (positionOfLastVisibleItem>=itemCount);
-    }
+    // passes our userinput to the server with REST api and volley library and sets returned message as bot message
     public void getResponse(String input){
         try {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -134,5 +133,12 @@ public class MainActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+    // scrolls down to the latest message after the user presses send
+    public boolean isVisible(){
+        LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+        int positionOfLastVisibleItem = linearLayoutManager.findLastCompletelyVisibleItemPosition();
+        int itemCount = recyclerView.getAdapter().getItemCount();
+        return (positionOfLastVisibleItem>=itemCount);
     }
 }

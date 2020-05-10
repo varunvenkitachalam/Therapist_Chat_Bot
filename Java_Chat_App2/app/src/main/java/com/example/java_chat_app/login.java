@@ -25,6 +25,7 @@ public class login extends AppCompatActivity {
            }
          });
     }
+    // after waiting for the given amount of time go to the main page
    public void openWait()
     {
      Intent intent = new Intent(this, wait.class);
